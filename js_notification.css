@@ -1,0 +1,75 @@
+.js_notification_area, .js_notification_area * {
+	font-family: sans-serif;
+}
+.js_notification_area {
+	width: 450px;
+	max-height: 100%;
+	position: fixed;
+	right: 0;
+	bottom: 0;
+	overflow-y: auto;
+	box-sizing: border-box;
+}
+	@media (orientation: portrait) {
+		.js_notification_area {
+			width: 100%;
+		}
+	}
+.js_notification_container {
+	padding: 0;
+	transition: .5s;
+	min-height: 0;
+	height: 0;
+	overflow: hidden;
+	display: flex;
+	box-shadow: 0 0 15px -5px #5e719294;
+	border-radius: 7px;
+	opacity: 0;
+}
+	.js_notification_container[js_notification_view="show"] {
+		overflow: hidden;
+		opacity: 1;
+		margin: 10px 10px;
+	}
+.js_notification_container .js_notification_item,
+.js_notification_container[js_notification_view=""] .js_notification_item {
+	transition: .5s;
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	padding: 15px;
+	color: #667285;
+	width: max-content;
+	background-color: #fff;
+	outline: none;
+	border-radius: 7px;
+	overflow: hidden;
+	border: 1px solid #c3d1e8;
+}
+.js_notification_container[js_notification_view="show"] .js_notification_item {
+}
+.js_notification_text {
+	flex: 1;
+	max-height: 350px;
+	overflow: hidden;
+}
+.js_notification_buttons {
+	flex-basis: 40px;
+}
+.js_notification_button {
+	display: block;
+	height: 40px;
+	width: fit-content;
+	float: right;
+	box-sizing: border-box;
+	padding: 10px;
+	cursor: pointer;
+	border-radius: 8px;
+	margin: 5px 0 0 5px;
+
+	background-color: #356dcb;
+	color: #fff;
+}
+.js_notification_button:hover {
+	background-color: #457ddb;
+}
