@@ -36,7 +36,7 @@ var notifs = new JS_Notificator();
 
 ## simple notification
 ```js
-
+notifs.add('hello');
 ```
 
 ## user buttons
