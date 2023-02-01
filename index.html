@@ -10,31 +10,36 @@
 		document.addEventListener('DOMContentLoaded', init);
 		var notifs = null;
 		function init() {
+			// creating notificator
 			notifs = new JS_Notificator();
-
-			alert = function(e) {notifs.add(e)};
+			// redirecting default alert
+			alert = (e) => {notifs.add(e)};
 
 			notifs.add('some buttons', {
 				'buttons': [
 					{
 						'value': 'alert',
-						'action': function() {alert('!')},
+						'action': () => {alert('!')},
 					},
 					{
 						'value': 'console.log',
-						'action': function() {console.log('!')},
+						'action': () => {console.log('!')},
 					},
 				],
 			});
 
 			notifs.add('autohide 5 sec', {
-				'buttons': [{'value': 'hide now', 'action': {}}],
+				'buttons': [{'value': 'hide now'}],
 				'autohide': 5000}
 			);
 
-			notifs.add("Hello! I`m pop-up message number! <br> It`s super large extra big element. . .It`s super large extra big element. . .It`s super large extra big element. . .It`s super large extra big element. . .It`s super large extra big element. . .It`s super large extra big element. . .It`s super large extra big element. . .It`s super large extra big element. . . It`s super large extra big element. . . It`s super large extra big element. . . It`s super large extra big element. . . It`s super large extra big element. . . It`s super large extra big element. . . It`s super large extra big element. . .");
+			notifs.add("Hello! I`m large pop-up message! <br> It`s super large extra big element. . .It`s super large extra big element. . .It`s super large extra big element. . .It`s super large extra big element. . .It`s super large extra big element. . .It`s super large extra big element. . .It`s super large extra big element. . .It`s super large extra big element. . . It`s super large extra big element. . . It`s super large extra big element. . . It`s super large extra big element. . . It`s super large extra big element. . . It`s super large extra big element. . . It`s super large extra big element. . .");
 
-			notifs.add('<img src="https://simpsons.fox-fan.tv/images/logo.png" width="98" height="86">');
+			notifs.add(`
+				<img src="https://simpsons.fox-fan.tv/images/logo.png" width="auto" height="86">
+				<img src="https://futurama.fox-fan.tv/images/logo.png" width="auto" height="86">
+				<img src="https://rickandmorty.cn-fan.tv/images/logo.png" width="auto" height="86">
+			`,);
 
 			notifs.add('<iframe width="100%" height="300" src="https://www.youtube.com/embed/jvPPXbo87ds" title="The Continuity of Splines" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>');
 		}

@@ -43,9 +43,14 @@ class JS_Notificator {
 		}
 		else {
 			for(let i = 0; i < params.buttons.length; i++) {
-				let notif_button = this.crButton(params.buttons[i].value, that, notif_container)
+				let notif_button;
+				if(params.buttons[i].value !== undefined)
+					notif_button = this.crButton(params.buttons[i].value, that, notif_container);
+				else
+					notif_button = this.crButton('ok', that, notif_container);
+				if(params.buttons[i].action !== undefined)
+					notif_button.addEventListener('click', params.buttons[i].action);
 				notif_buttons.appendChild(notif_button);
-				notif_button.addEventListener('click', params.buttons[i].action);
 			}
 		}
 		if(params.autohide !== undefined) {

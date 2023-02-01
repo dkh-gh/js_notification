@@ -9,6 +9,7 @@
 	bottom: 0;
 	overflow-y: auto;
 	box-sizing: border-box;
+	z-index: 79998086931;
 }
 	@media (orientation: portrait) {
 		.js_notification_area {
